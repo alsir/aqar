@@ -6,10 +6,14 @@ use App\Filament\Resources\AreaResource\Pages;
 use App\Filament\Resources\AreaResource\RelationManagers;
 use App\Models\Area;
 use Filament\Forms;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -23,7 +27,21 @@ class AreaResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('name')->required(),
+                TextInput::make('email')->email()->required()->unique(ignoreRecord: true),
+                TextInput::make('phone_number')->numeric()->required()->unique(ignoreRecord: true),
+                TextInput::make('person_id')->required(),
+                Select::make('id_type')
+                    ->options([
+                        1 => 'National ID',
+                        2 => 'Passport',
+                    ])
+                    ->required(),
+                DateTimePicker::make('email_verified_at'),
+                TextInput::make('password')
+                    ->password()
+                    ->required()
+                    ->dehydrateStateUsing(fn($state) => \Hash::make($state)),
             ]);
     }
 

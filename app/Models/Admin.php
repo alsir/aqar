@@ -2,11 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Model;
+use Filament\Panel;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Admin extends Model
+class Admin extends Model implements FilamentUser
 {
-    /** @use HasFactory<\Database\Factories\AdminFactory> */
-    use HasFactory;
+    public function canAccessPanel(Panel $panel): bool
+    {
+        // Return true if this user can access the panel
+        return true; // or add custom logic here based on user role or permission
+    }
 }

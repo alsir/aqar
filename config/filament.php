@@ -30,6 +30,10 @@ return [
         // ],
 
     ],
+    'auth' => [
+        'guard' => 'web', // or use 'admin' if you defined a separate guard
+        'user_model' => \App\Models\Admin::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
