@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Domin\Broker\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Agent extends Model
+class Broker extends Model
 {
-    /** @use HasFactory<\Database\Factories\AgentFactory> */
+    /** @use HasFactory<\Database\Factories\BrokerFactory> */
     use HasFactory;
 }

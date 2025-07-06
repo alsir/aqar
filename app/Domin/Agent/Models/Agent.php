@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Domin\Agent\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Area extends Model
+class Agent extends Model
 {
-    /** @use HasFactory<\Database\Factories\AreaFactory> */
+    /** @use HasFactory<\Database\Factories\AgentFactory> */
     use HasFactory;
 }

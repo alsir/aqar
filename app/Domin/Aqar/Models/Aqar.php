@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Domin\Aqar\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Broker extends Model
+class Aqar extends Model
 {
-    /** @use HasFactory<\Database\Factories\BrokerFactory> */
+    /** @use HasFactory<\Database\Factories\AqarFactory> */
     use HasFactory;
 }
