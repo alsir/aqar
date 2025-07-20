@@ -17,8 +17,7 @@ use Filament\Forms\Components\DateTimePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class AdminResource extends Resource
-{
+class AdminResource extends Resource{
     protected static ?string $model = Admin::class;
 
     protected static ?string $navigationIcon = 'eos-admin-o';
